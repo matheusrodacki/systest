@@ -4,7 +4,7 @@
 
 ## Resumo do projeto
 
-Projeto de sistema básico de avaliação de hard skils.
+Projeto de sistema básico de avaliação de hard skills.
 Gestão básica de login, clientes, produtos e vendas.
 
 ## Stack utilizada
