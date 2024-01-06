@@ -1,14 +1,14 @@
 export class LoginController {
-  #username;
-  #password;
+  #usernameElement;
+  #passwordElement;
 
   constructor() {
-    this.#username = document.querySelector("#username");
-    this.#password = document.querySelector("#password");
+    this.#usernameElement = document.querySelector("#username");
+    this.#passwordElement = document.querySelector("#password");
   }
-  autenticar(login, senha) {
-    const username = login.value;
-    const password = senha.value;
+  autenticar(usernameInput, passwordInput) {
+    const username = usernameInput.value;
+    const password = passwordInput.value;
 
     if (username === "admin" && password === "password") {
       window.location = "main.html";
@@ -42,12 +42,12 @@ export class LoginController {
     }
   }
   validaLogin() {
-    this.autenticar(this.#username, this.#password);
+    this.autenticar(this.#usernameElement, this.#passwordElement);
     this.limparFormulario();
   }
   limparFormulario() {
-    this.#username.value = "";
-    this.#password.value = "";
-    this.#username.focus();
+    this.#usernameElement.value = "";
+    this.#passwordElement.value = "";
+    this.#passwordElement.focus();
   }
 }
