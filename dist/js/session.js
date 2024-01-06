@@ -1,23 +1,20 @@
+import { obterCookie, removerCookie } from "./cookies.js";
+
+const cookie = obterCookie("admin");
+verificaSessao();
+
 function verificaSessao() {
-  if (
-    sessionStorage.getItem("autenticado") === "true" &&
-    sessionStorage.getItem("level") === "admin"
-  ) {
-    return true;
+  if (cookie) {
+    console.log("verificou que está logado!");
   } else {
-    return false;
+    console.log("verificou que está deslogado!");
+    window.location = "index.html";
   }
 }
 
-const logado = verificaSessao();
+const logoutBtn = document.querySelector("#logoff-btn");
 
-if (logado) {
-} else {
-  const logoff = document.querySelector("#logoff-btn");
-
-  logoff.addEventListener("click", destroiSessao());
-
-  function destroiSessao() {
-    sessionStorage.clear();
-  }
-}
+logoutBtn.addEventListener("click", () => {
+  removerCookie("tokenJWT");
+  window.location.href = "/login/index.html";
+});

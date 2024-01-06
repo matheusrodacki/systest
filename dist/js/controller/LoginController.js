@@ -1,3 +1,4 @@
+import { definirCookie } from "./cookies.js";
 export class LoginController {
   #usernameElement;
   #passwordElement;
@@ -11,8 +12,7 @@ export class LoginController {
     const password = passwordInput.value;
 
     if (username === "admin" && password === "password") {
-      sessionStorage.setItem("autenticado", true);
-      sessionStorage.setItem("level", "admin");
+      definirCookie("login", "admin");
       window.location = "main.html";
     } else {
       if (document.getElementById("login-fail-alert")) {
