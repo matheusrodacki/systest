@@ -1,4 +1,4 @@
-import { definirCookie } from "./cookies.js";
+import { definirCookie } from "../cookies.js";
 export class LoginController {
   #usernameElement;
   #passwordElement;

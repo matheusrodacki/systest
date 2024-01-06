@@ -1,13 +1,12 @@
 import { obterCookie, removerCookie } from "./cookies.js";
 
-const cookie = obterCookie("admin");
-verificaSessao();
+const cookie = obterCookie("login");
+verificaSessao(cookie);
 
-function verificaSessao() {
-  if (cookie) {
-    console.log("verificou que está logado!");
+function verificaSessao(cookie) {
+  console.log(cookie);
+  if (cookie === "admin") {
   } else {
-    console.log("verificou que está deslogado!");
     window.location = "index.html";
   }
 }
@@ -15,6 +14,6 @@ function verificaSessao() {
 const logoutBtn = document.querySelector("#logoff-btn");
 
 logoutBtn.addEventListener("click", () => {
-  removerCookie("tokenJWT");
-  window.location.href = "/login/index.html";
+  removerCookie("login");
+  window.location.href = "index.html";
 });
