@@ -11,8 +11,8 @@ export class LoginController {
     const password = passwordInput.value;
 
     if (username === "admin" && password === "password") {
-      localStorage.setItem("autenticado", true);
-      localStorage.setItem("level", "admin");
+      sessionStorage.setItem("autenticado", true);
+      sessionStorage.setItem("level", "admin");
       window.location = "main.html";
     } else {
       if (document.getElementById("login-fail-alert")) {

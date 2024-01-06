@@ -1,20 +1,23 @@
-verificaSessao();
-
 function verificaSessao() {
   if (
-    localStorage.getItem("autenticado") === "true" &&
-    localStorage.getItem("level") === "admin"
+    sessionStorage.getItem("autenticado") === "true" &&
+    sessionStorage.getItem("level") === "admin"
   ) {
-    console.log("estou logado!");
+    return true;
   } else {
-    window.location = "index.html";
+    return false;
   }
 }
 
-const logoff = document.querySelector("#logoff-btn");
+const logado = verificaSessao();
 
-logoff.addEventListener("click", destroiSessao());
+if (logado) {
+} else {
+  const logoff = document.querySelector("#logoff-btn");
 
-function destroiSessao() {
-  localStorage.clear();
+  logoff.addEventListener("click", destroiSessao());
+
+  function destroiSessao() {
+    sessionStorage.clear();
+  }
 }
