@@ -1,4 +1,4 @@
-import { LoginController } from "./controller/login.js";
+import { LoginController } from "./controller/LoginController.js";
 
 const loginController = new LoginController();
 
