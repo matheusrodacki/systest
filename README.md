@@ -33,12 +33,13 @@ Este projeto já conta com o código necessário para subir a aplicação em um 
 │   │   │ └── LoginController.js
 │   │   ├── app.js
 │   │   ├── cookie.js
-│   │   └── app.js
+│   │   └── sessao.js
 │   ├── clientes.html
 │   ├── index.html
 │   ├── main.html
 │   ├── produtos.html
 │   └── vendas.html
+├── .gitignore
 ├── package.json
 ├── package-lock.json
 └── README.md
